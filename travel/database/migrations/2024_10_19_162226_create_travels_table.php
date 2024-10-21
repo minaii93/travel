@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('evaluation');
             $table->foreignId('flight_id')->references('flight_id')->on('flights');
-            $table->foreignId('user_id')->references('user_id')->on('users');
+            $table->foreignId('user_id')->references('id')->on('users');
         });
     }
 
