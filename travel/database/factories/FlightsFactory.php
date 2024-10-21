@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Airlines;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,9 @@ class FlightsFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'date' => fake()->date(),
+            'airline_id' => Airlines::all()->random()->airline_id,
+            'limit' => rand(1,201)
         ];
     }
 }
